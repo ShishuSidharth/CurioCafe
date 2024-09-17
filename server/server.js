@@ -7,7 +7,7 @@ const dbConfig = require("./config/dbConfig");
 const usersRoute = require("./routes/usersRoute");
 const questionsRoute = require("./routes/questionsRoute");
 const questionActionsRoute = require("./routes/questionActionsRoute");
-
+const path = require("path");
 app.use(express.json());
 
 app.use("/api/users", usersRoute);
@@ -47,7 +47,7 @@ io.on("connection", (socket) => {
 });
 
 
-const path = require("path");
+
 __dirname = path.resolve();
 // render deployment
 if (process.env.NODE_ENV === "production") {
